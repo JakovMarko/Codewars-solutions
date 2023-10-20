@@ -25,3 +25,4 @@ function maskify(cc) {
   
 
 console.log(maskify('4556364607935616'));
+
