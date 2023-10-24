@@ -1,19 +1,12 @@
-// Task:
-// Your task is to write a function which returns the sum of following series upto nth term(parameter).
+// If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
 
-// Series: 1 + 1/4 + 1/7 + 1/10 + 1/13 + 1/16 +...
-// Rules:
-// You need to round the answer to 2 decimal places and return it as String.
+// Finish the solution so that it returns the sum of all the multiples of 3 or 5 below the number passed in.
 
-// If the given value is 0 then it should return 0.00
+// Additionally, if the number is negative, return 0.
 
-// You will only be given Natural Numbers as arguments.
+// Note: If the number is a multiple of both 3 and 5, only count it once.
 
-// Examples:(Input --> Output)
-// 1 --> 1 --> "1.00"
-// 2 --> 1 + 1/4 --> "1.25"
-// 5 --> 1 + 1/4 + 1/7 + 1/10 + 1/13 --> "1.57"
-
+// Courtesy of projecteuler.net (Problem 1)
 
 
 function solution(number){
@@ -23,8 +16,9 @@ function solution(number){
         container.push(i);
       }
     }
-    console.log(container);
-    return container.reduce((total, previous) => total = total + previous, 0);
+    return container.reduce((total, previous) => {
+        return total = total + previous
+    }, 0);
   }
 
 console.log(solution(10));
