@@ -19,5 +19,7 @@ function domainName(url){
     let urlDomain = url.slice(0, firstDot);
     return urlDomain;
 }
-    
-  }
+     
+  }  
+
+//   added
