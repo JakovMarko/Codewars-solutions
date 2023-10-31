@@ -21,6 +21,23 @@
 
 
 var humanYearsCatYearsDogYears = function(humanYears) {
-    // Your code here!
-    return [0,0,0];
+    let thisIsSuchBadCodeButIDontCareTooMuch = humanYears;
+    let catYears = 0;
+    let dogYears = 0;
+    while(humanYears > 2){
+        catYears += 4;
+        dogYears += 5;
+        humanYears--;
+    }
+    if(humanYears == 2){
+        humanYears--;
+        catYears += 9;
+        dogYears += 9;
+    }
+    if (humanYears == 1){
+        catYears += 15;
+        dogYears += 15;
+    }
+
+    return [thisIsSuchBadCodeButIDontCareTooMuch, catYears, dogYears];
   }
