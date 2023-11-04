@@ -21,13 +21,6 @@
 
 function solution(input, markers) {
     let contain = input.split('\n');
-    let result;
-    // contain.forEach((item, index, arr) => {
-    //     if(arr[index][item.length-1] == ' '){
-    //         arr[index][item.length-1] = 's';
-    //     }
-    // });
-
     for (let i = 0; i<=markers.length-1 ; i++){
       contain = contain.map((item, index) => {
         return item.split(markers[i])[0]
