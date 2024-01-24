@@ -18,12 +18,19 @@
 // encryptThis("hello world") === "104olle 119drlo"
 
 var encryptThis = function(text) {
-   let textArr = [...text];
-   let textMidd = textArr.slice(1,textArr.length-2);
-   let asciFirstLetter = text.charCodeAt(0);
-   return [asciFirstLetter, textArr[textArr.length-1], ...textMidd, textArr[1]]
-   
-   
-   
-    // Implement me! :)
-  }
+    let words = text.split(' ');
+    let result = words.map(item => {
+      if(item.length <= 1){
+        return item.charCodeAt(0);
+      } else if(item.length <=2 ){
+        return item.charCodeAt(0)+item[1];
+      }
+       let textArr = [...item];
+       let textMidd = textArr.slice(2,textArr.length-1);
+       let asciFirstLetter = item.charCodeAt(0);
+       return [asciFirstLetter, textArr[textArr.length-1], ...textMidd, textArr[1]].join('')
+ }).join(' ');
+    
+    return result;
+     // Implement me! :)
+   }
