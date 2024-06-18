@@ -1,25 +1,25 @@
-// Complete the function which takes a non-zero integer as its argument.
+// The vowel substrings in the word codewarriors are o,e,a,io. The longest of these has a length of 2. Given a lowercase string that has alphabetic characters only (both vowels and consonants) and no spaces, return the length of the longest vowel substring. Vowels are any of aeiou.
 
-// If the integer is divisible by 3, return the string "Java".
+// Good luck!
 
-// If the integer is divisible by 3 and divisible by 4, return the string "Coffee"
+// If you like substring Katas, please try:
 
-// If one of the condition above is true and the integer is even, add "Script" to the end of the string.
+// Non-even substrings
 
-// If none of the condition is true, return the string "mocha_missing!"
+// Vowel-consonant lexicon
 
-// Examples
-// 1   -->  "mocha_missing!"
-// 3   -->  "Java"
-// 6   -->  "JavaScript"
-// 12  -->  "CoffeeScript"
-
-function caffeineBuzz(n) {
-  if (n % 3 == 0 && n % 4 == 0) {
-    return n % 2 == 0 ? "CoffeeScript" : "Coffee";
-  } else if (n % 3 == 0) {
-    return n % 2 == 0 ? "JavaScript" : "Java";
-  } else {
-    return "mocha_missing!";
+function solve(s) {
+  let cur = 0;
+  let max = 0;
+  for (let i = 0; i < s.length; ++i) {
+    if ("aeiou".includes(s[i])) {
+      cur++;
+      if (cur > max) {
+        max = cur;
+      }
+    } else {
+      cur = 0;
+    }
   }
+  return max;
 }
