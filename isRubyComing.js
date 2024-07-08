@@ -1,21 +1,24 @@
-// You will be given an array of objects (associative arrays in PHP) representing data about developers who have signed up to attend the next coding meetup that you are organising.
+// You are given a string of letters and an array of numbers.
+// The numbers indicate positions of letters that must be removed, in order, starting from the beginning of the array.
+// After each removal the size of the string decreases (there is no empty space).
+// Return the only letter left.
 
-// Your task is to return:
+// Example:
 
-// true if at least one Ruby developer has signed up; or
-// false if there will be no Ruby developers.
-// For example, given the following input array:
+// let str = "zbk", arr = [0, 1]
+//     str = "bk", arr = [1]
+//     str = "b", arr = []
+//     return 'b'
+// Notes
+// The given string will never be empty.
+// The length of the array is always one less than the length of the string.
+// All numbers are valid.
+// There can be duplicate letters and numbers.
+// If you like this kata, check out the next one: Last Survivors Ep.2
 
-// var list1 = [
-//   { firstName: 'Emma', lastName: 'Z.', country: 'Netherlands', continent: 'Europe', age: 29, language: 'Ruby' },
-//   { firstName: 'Piotr', lastName: 'B.', country: 'Poland', continent: 'Europe', age: 128, language: 'Javascript' },
-//   { firstName: 'Jayden', lastName: 'P.', country: 'Jamaica', continent: 'Americas', age: 42, language: 'JavaScript' }
-// ];
-// your function should return true.
-
-// Notes:
-
-// The input array will always be valid and formatted as in the example above.
-function isRubyComing(list) {
-  return list.some((item) => item.language === "Ruby");
+function lastSurvivor(letters, coords) {
+  coords.forEach((item) => {
+    letters = letters.substring(0, item) + letters.substring(item + 1);
+  });
+  return letters;
 }
