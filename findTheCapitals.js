@@ -1,15 +1,19 @@
-// Instructions
-// Write a function that takes a single string (word) as argument. The function must return an ordered list containing the indexes of all capital letters in the string.
+// Complete the method that takes a sequence of objects with two keys each: country or state, and capital. Keys may be symbols or strings.
 
-// Example (Input --> Output)
-// "CodEWaRs" --> [0,3,4,6]
+// The method should return an array of sentences declaring the state or country and its capital.
 
-var capitals = function (word) {
-    let result = []
-    word.split('').map((item, index) => {
-      if(item == item.toUpperCase()){
-        result.push(index);
-      }
-    })
-    return result;
-  };
+// Examples
+// state_capitals = [{state: 'Maine', capital: 'Augusta'}]
+// capital(state_capitals)[0] // returns "The capital of Maine is Augusta"
+
+// country_capitals = [{'country' : 'Spain', 'capital' : 'Madrid'}]
+// capital(country_capitals)[0]  // returns "The capital of Spain is Madrid"
+
+// mixed_capitals: [{"state" : 'Maine', capital: 'Augusta'}, {country: 'Spain', "capital" : "Madrid"}]
+// capital(mixed_capitals)[1] // returns "The capital of Spain is Madrid"
+function capital(capitals) {
+  let res = capitals.map(
+    (item) => `The capital of ${item.country || item.state} is ${item.capital}`
+  );
+  return res;
+}
