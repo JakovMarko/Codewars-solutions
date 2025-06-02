@@ -32,3 +32,7 @@ function solve(a, b) {
   let result = aUnique + bUnique;
   return result;
 }
+
+// function solve(a,b){
+//  return (a+b).split("").filter(c => !a.includes(c) || !b.includes(c)).join("");
+// };
