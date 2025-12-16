@@ -2,7 +2,7 @@
 
 // The output should be two capital letters with a dot separating them.
 
-// It should look like this:
+// It should look like this:s
 
 // Sam Harris => S.H
 
